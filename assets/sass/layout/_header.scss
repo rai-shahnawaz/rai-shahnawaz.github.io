@@ -21,16 +21,16 @@
 		> * {
 			@include vendor('transition', 'opacity #{_duration(article)} ease-in-out');
 			position: relative;
-			margin-top: 3.5rem;
+			margin-top: 2rem;
 
 			&:before {
 				content: '';
 				display: block;
 				position: absolute;
-				top: calc(-3.5rem - 1px);
+				top: calc(-2rem - 1px);
 				left: calc(50% - #{_size(border-width) * 1});
 				width: _size(border-width);
-				height: calc(3.5rem + 1px);
+				height: calc(2rem + 1px);
 				background: _palette(border);
 			}
 		}
@@ -44,8 +44,8 @@
 		}
 
 		.logo {
-			width: 5.5rem;
-			height: 5.5rem;
+			width: 7.5rem;
+			height: 7.5rem;
 			line-height: 5.5rem;
 			border: solid _size(border-width) _palette(border);
 			border-radius: 100%;
@@ -71,7 +71,7 @@
 					'opacity #{_duration(article)} ease-in-out'
 				));
 				@include vendor('transition-delay', '0.25s');
-				padding: 2.5rem 2rem;
+				padding: 2rem;
 				max-height: 40rem;
 				max-width: 58rem;
 				overflow: hidden;
@@ -90,7 +90,7 @@
 				.hero-title {
 					font-size: 1.35rem;
 					letter-spacing: 0.3rem;
-					margin-bottom: 0.75rem;
+					margin-bottom: 0.5rem;
 				}
 
 				.hero-focus,
@@ -103,7 +103,11 @@
 
 				.hero-focus {
 					font-size: 0.85rem;
-					margin-bottom: 1.25rem;
+					margin-bottom: 0.875rem;
+				}
+
+				.hero-description {
+					margin-bottom: 1rem;
 				}
 
 				.hero-description,
@@ -126,6 +130,7 @@
 				border-radius: _size(border-radius);
 
 				li {
+					@include vendor('flex', '1 1 auto');
 					padding-left: 0;
 					border-left: solid _size(border-width) _palette(border);
 
@@ -135,10 +140,10 @@
 
 					a {
 						display: block;
-						min-width: 7.5rem;
+						min-width: 6rem;
 						height: 2.75rem;
 						line-height: 2.75rem;
-						padding: 0 1.25rem 0 (1.25rem + _font(letter-spacing));
+						padding: 0 0.95rem;
 						text-transform: uppercase;
 						letter-spacing: 0.08rem;
 						font-size: 0.8rem;
@@ -217,17 +222,17 @@
 
 		@include breakpoint('<=small') {
 			> * {
-				margin-top: 2rem;
+				margin-top: 1.25rem;
 
 				&:before {
-					top: calc(-2rem - 1px);
-					height: calc(2rem + 1px);
+					top: calc(-1.25rem - 1px);
+					height: calc(1.25rem + 1px);
 				}
 			}
 
 			.logo {
-				width: 4.75rem;
-				height: 4.75rem;
+				width: 5.75rem;
+				height: 5.75rem;
 				line-height: 4.75rem;
 
 				.icon {
@@ -239,7 +244,7 @@
 
 			.content {
 				.inner {
-					padding: 2.5rem 1rem;
+					padding: 1.5rem 1rem;
 				}
 
 				p {
@@ -248,6 +253,7 @@
 
 				.hero-focus {
 					line-height: 1.6;
+					margin-bottom: 0.75rem;
 				}
 
 				.hero-description,
@@ -259,11 +265,11 @@
 		}
 
 		@include breakpoint('<=xsmall') {
-			padding: 1.5rem 0;
+			padding: 0.5rem 0;
 
 			.content {
 				.inner {
-					padding: 2.5rem 0;
+					padding: 1.25rem 0;
 				}
 			}
 
