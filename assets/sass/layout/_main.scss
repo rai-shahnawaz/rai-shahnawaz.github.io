@@ -27,9 +27,25 @@
 			position: relative;
 			width: 40rem;
 			max-width: 100%;
-			background-color: transparentize(_palette(bg), 0.15);
-			border-radius: _size(border-radius);
+			background-color: transparentize(_palette(bg), 0.04);
+			border: solid _size(border-width) _palette(border);
+			border-radius: 6px;
 			opacity: 0;
+
+			.work-role {
+				color: _palette(fg-bold);
+				font-size: 0.8rem;
+				font-weight: _font(weight-bold);
+				letter-spacing: 0.04rem;
+				margin-bottom: 0.25rem;
+			}
+
+			.work-tech {
+				color: _palette(fg-light);
+				font-size: 0.75rem;
+				letter-spacing: 0.03rem;
+				margin-bottom: 1rem;
+			}
 
 			&.active {
 				@include vendor('transform', 'translateY(0)');
@@ -37,6 +53,11 @@
 			}
 
 			.close {
+				@include vendor('appearance', 'none');
+				background: transparent;
+				border: 0;
+				box-shadow: none;
+				color: transparent;
 				display: block;
 				position: absolute;
 				top: 0;
@@ -46,7 +67,13 @@
 				cursor: pointer;
 				text-indent: 4rem;
 				overflow: hidden;
+				padding: 0;
 				white-space: nowrap;
+
+				&:focus-visible {
+					outline: solid 2px _palette(accent);
+					outline-offset: -0.75rem;
+				}
 
 				&:before {
 					@include vendor('transition', 'background-color #{_duration(transition)} ease-in-out');

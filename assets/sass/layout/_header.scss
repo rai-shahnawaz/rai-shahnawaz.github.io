@@ -15,10 +15,6 @@
 			'filter #{_duration(article)} ease-in-out',
 			'opacity #{_duration(article)} ease-in-out',
 		));
-		background-image: -moz-radial-gradient(rgba(0,0,0,0.25) 25%, rgba(0,0,0,0) 55%);
-		background-image: -webkit-radial-gradient(rgba(0,0,0,0.25) 25%, rgba(0,0,0,0) 55%);
-		background-image: -ms-radial-gradient(rgba(0,0,0,0.25) 25%, rgba(0,0,0,0) 55%);
-		background-image: radial-gradient(rgba(0,0,0,0.25) 25%, rgba(0,0,0,0) 55%);
 		max-width: 100%;
 		text-align: center;
 
@@ -75,8 +71,9 @@
 					'opacity #{_duration(article)} ease-in-out'
 				));
 				@include vendor('transition-delay', '0.25s');
-				padding: 3rem 2rem;
+				padding: 2.5rem 2rem;
 				max-height: 40rem;
+				max-width: 58rem;
 				overflow: hidden;
 
 				> :last-child {
@@ -85,11 +82,38 @@
 			}
 
 			p {
-				text-transform: uppercase;
-				letter-spacing: _font(letter-spacing);
-				font-size: 0.8rem;
-				line-height: 2;
+				letter-spacing: 0.06rem;
+				font-size: 0.95rem;
+				line-height: 1.7;
 			}
+
+				.hero-title {
+					font-size: 1.35rem;
+					letter-spacing: 0.3rem;
+					margin-bottom: 0.75rem;
+				}
+
+				.hero-focus,
+				.hero-description,
+				.hero-role {
+					text-transform: none;
+					letter-spacing: 0.04rem;
+					line-height: 1.7;
+				}
+
+				.hero-focus {
+					font-size: 0.85rem;
+					margin-bottom: 1.25rem;
+				}
+
+				.hero-description,
+				.hero-role {
+					font-size: 1rem;
+				}
+
+				.hero-role {
+					margin-bottom: 0;
+				}
 		}
 
 		nav {
@@ -116,7 +140,7 @@
 						line-height: 2.75rem;
 						padding: 0 1.25rem 0 (1.25rem + _font(letter-spacing));
 						text-transform: uppercase;
-						letter-spacing: _font(letter-spacing);
+						letter-spacing: 0.08rem;
 						font-size: 0.8rem;
 						border-bottom: 0;
 
@@ -126,6 +150,11 @@
 
 						&:active {
 							background-color: _palette(border-bg-alt);
+						}
+
+						&:focus-visible {
+							outline: solid 2px _palette(accent);
+							outline-offset: -2px;
 						}
 					}
 				}
@@ -214,7 +243,17 @@
 				}
 
 				p {
-					line-height: 1.875;
+					line-height: 1.7;
+				}
+
+				.hero-focus {
+					line-height: 1.6;
+				}
+
+				.hero-description,
+				.hero-role {
+					font-size: 0.95rem;
+					line-height: 1.65;
 				}
 			}
 		}

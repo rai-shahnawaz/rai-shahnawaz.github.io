@@ -69,6 +69,15 @@
 		var	delay = 325,
 			locked = false;
 
+		var resolveArticleHash = function(hash) {
+
+			if (hash == '#about')
+				return '#writing';
+
+			return hash;
+
+		};
+
 		// Methods.
 			$main._show = function(id, initial) {
 
@@ -292,7 +301,7 @@
 				var $this = $(this);
 
 				// Close.
-					$('<div class="close">Close</div>')
+					$('<button class="close" type="button" aria-label="Close">Close</button>')
 						.appendTo($this)
 						.on('click', function() {
 							location.hash = '';
@@ -349,14 +358,14 @@
 					}
 
 				// Otherwise, check for a matching article.
-					else if ($main_articles.filter(location.hash).length > 0) {
+					else if ($main_articles.filter(resolveArticleHash(location.hash)).length > 0) {
 
 						// Prevent default.
 							event.preventDefault();
 							event.stopPropagation();
 
 						// Show article.
-							$main._show(location.hash.substr(1));
+							$main._show(resolveArticleHash(location.hash).substr(1));
 
 					}
 
@@ -395,7 +404,7 @@
 				if (location.hash != ''
 				&&	location.hash != '#')
 					$window.on('load', function() {
-						$main._show(location.hash.substr(1), true);
+						$main._show(resolveArticleHash(location.hash).substr(1), true);
 					});
 
 })(jQuery);

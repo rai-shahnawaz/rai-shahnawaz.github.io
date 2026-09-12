@@ -24,20 +24,22 @@
 		family:						('Source Sans Pro', sans-serif),
 		family-fixed:				('Courier New', monospace),
 		weight:						300,
+		weight:						400,
 		weight-bold:				600,
-		letter-spacing:				0.2rem,
-		letter-spacing-heading:		0.5rem
+		letter-spacing:				0.08rem,
+		letter-spacing-heading:		0.15rem,
 	);
 
 // Palette.
 	$palette: (
-		bg:							#1b1f22,
-		bg-alt:						#000000,
-		bg-overlay:					rgba(19,21,25,0.5),
-		fg:							#ffffff,
-		fg-bold:					#ffffff,
-		fg-light:					rgba(255,255,255,0.5),
-		border:						#ffffff,
-		border-bg:					rgba(255,255,255,0.075),
-		border-bg-alt:				rgba(255,255,255,0.175)
+		bg:							#101820,
+		bg-alt:						#0a1016,
+		bg-overlay:					rgba(8,14,21,0.78),
+		accent:						#2F4F6F,
+		fg:							#d9e2e8,
+		fg-bold:					#f4f7f9,
+		fg-light:					rgba(217,226,232,0.68),
+		border:						rgba(174,196,211,0.38),
+		border-bg:					rgba(47,79,111,0.18),
+		border-bg-alt:				rgba(47,79,111,0.34)
 	);
